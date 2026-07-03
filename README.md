@@ -134,7 +134,7 @@ Both models were rigorously tested against a holdout test dataset containing **5
 
 ### Summary of Findings
 * **Baseline Model**: The Multinomial Naive Bayes model delivers outstanding accuracy (98.51%) and executes in milliseconds, serving as a highly effective, compute-efficient alternative for low-resource environments.
-* **Transformer Model**: Fine-tuning DistilBERT yielded a **99.64% Accuracy** and **0.0128 Loss** on spam detection. The deep contextual understanding of the model allows it to correctly classify complex phishing emails that bypass simple vocabulary-matching baselines.
+* **Transformer Model (Selected Method)**: Fine-tuning DistilBERT yielded a **99.64% Accuracy** and **0.0128 Loss** on spam detection. We selected the DistilBERT transformer model for our main deployment over the Naive Bayes baseline because it handles **tricky, context-dependent spam** (such as spear-phishing or subtle social engineering) far better. The transformer's attention mechanism captures semantic relationships and phrasing flow, whereas the Naive Bayes model relies entirely on bag-of-words keyword frequencies and can be easily bypassed by slightly altered spam text.
 
 ---
 
