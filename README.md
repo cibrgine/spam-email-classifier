@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- Project Logo hosted on GitHub assets -->
-<img src="https://github.com/user-attachments/assets/cf66a0bc-f89a-41f2-959c-7cc8a7f8e8b2" alt="Spam Classifier Logo" width="120" style="margin-bottom: 15px;"/>
+<img src="https://raw.githubusercontent.com/cibrgine/spam-email-classifier/assets/img/logo.png" alt="Spam Classifier Logo" width="120" style="margin-bottom: 15px;"/>
 
 # 📧 Deep Learning & ML Spam Email Classifier
 
@@ -141,9 +141,8 @@ Both models were rigorously tested against a holdout test dataset containing **5
 ## 🖥️ Application Screenshots
 
 <div align="center">
-  <!-- Note: Replace the asset IDs below with your actual drag-and-dropped issue/PR attachment IDs -->
-  <img src="https://github.com/user-attachments/assets/b834e592-d610-424a-9eb3-ebcc04d0ef92" alt="Gradio Application UI Screenshot 1" width="800" style="box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 10px; border: 1px solid #e5e7eb; margin-bottom: 20px;"/>
-  <img src="https://github.com/user-attachments/assets/c924d592-d610-424a-9eb3-ebcc04d0ef93" alt="Gradio Application UI Screenshot 2" width="800" style="box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 10px; border: 1px solid #e5e7eb;"/>
+  <img src="https://raw.githubusercontent.com/cibrgine/spam-email-classifier/assets/img/screen1.png" alt="Gradio Application UI Screenshot 1" width="800" style="box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 10px; border: 1px solid #e5e7eb; margin-bottom: 20px;"/>
+  <img src="https://raw.githubusercontent.com/cibrgine/spam-email-classifier/assets/img/screen2.png" alt="Gradio Application UI Screenshot 2" width="800" style="box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 10px; border: 1px solid #e5e7eb;"/>
   <p><em>Figures 1 & 2: The Gradio web interface, showcasing classification results for different email samples.</em></p>
 </div>
 
