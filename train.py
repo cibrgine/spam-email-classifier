@@ -13,7 +13,6 @@ from transformers import (
 )
 import evaluate
 
-# Suppress annoying warnings and dataset progress bars
 hf_logging.set_verbosity_error()
 disable_progress_bar()
 
@@ -30,34 +29,28 @@ def main():
     model_name = "distilbert-base-uncased"
     tokenizer = DistilBertTokenizer.from_pretrained(model_name)
     
-    # We have 2 labels (Safe=0, Spam=1)
     model = DistilBertForSequenceClassification.from_pretrained(model_name, num_labels=2)
     model.to(device)
 
     print("Loading data...")
-    # Load just train and validation sets for fine-tuning
     df_train = pd.read_csv(os.path.join('data', 'train.csv'))
     df_val = pd.read_csv(os.path.join('data', 'validate.csv'))
     
-    # Fill missing values just in case
     df_train['text'] = df_train['text'].fillna('')
     df_val['text'] = df_val['text'].fillna('')
 
     train_dataset = Dataset.from_pandas(df_train)
     val_dataset = Dataset.from_pandas(df_val)
 
-    # Tokenization function
     def tokenize_function(examples):
         return tokenizer(examples['text'], truncation=True, padding=False, max_length=512)
 
-    print("Tokenizing data (this may take a minute)...")
+    print("Tokenizing data...")
     tokenized_train = train_dataset.map(tokenize_function, batched=True)
     tokenized_val = val_dataset.map(tokenize_function, batched=True)
 
-    # Data collator handles dynamic padding of batches for efficiency
     data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
 
-    # Metrics
     metric_acc = evaluate.load("accuracy")
     metric_prec = evaluate.load("precision")
     
@@ -73,23 +66,22 @@ def main():
             "precision": prec["precision"],
         }
 
-    # Training Arguments
     print("Setting up training...")
     training_args = TrainingArguments(
         output_dir="./results",
         learning_rate=2e-5,
         per_device_train_batch_size=16,
         per_device_eval_batch_size=16,
-        num_train_epochs=2,  # 2 epochs is usually enough for fine-tuning DistilBERT on 23k samples
+        num_train_epochs=2, 
         weight_decay=0.01,
         eval_strategy="epoch",
         save_strategy="epoch",
         load_best_model_at_end=True,
-        fp16=True if device == "cuda" else False, # Mixed precision for faster GPU training
+        fp16=True if device == "cuda" else False, 
         logging_dir='./logs',
         logging_steps=100,
-        disable_tqdm=True, # Hide the training progress bar
-        report_to="none", # Don't report to wandb or similar
+        disable_tqdm=True, 
+        report_to="none", 
     )
 
     trainer = Trainer(
@@ -106,13 +98,13 @@ def main():
     trainer.train()
 
     print("\n" + "="*50)
-    print("🚀 TRAINING COMPLETE!")
+    print("TRAINING COMPLETE")
     print("="*50)
     print("Evaluating on validation set...")
     eval_results = trainer.evaluate()
     
     print("\n" + "="*50)
-    print("📊 FINAL EVALUATION RESULTS:")
+    print("FINAL EVALUATION RESULTS:")
     print("="*50)
     for key, value in eval_results.items():
         if isinstance(value, float):

@@ -25,3 +25,7 @@ data/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Local image directory (images uploaded via GitHub issues/attachments)
+img/
+

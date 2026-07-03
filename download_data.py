@@ -11,7 +11,6 @@ def main():
         df_train = dataset['train'].to_pandas()
         df_test = dataset['test'].to_pandas()
         
-        # Save datasets as CSV
         train_path = os.path.join('data', 'train.csv')
         test_path = os.path.join('data', 'test.csv')
         

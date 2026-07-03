@@ -7,29 +7,23 @@ def main():
     train_path = os.path.join('data', 'train.csv')
     test_path = os.path.join('data', 'test.csv')
     
-    # Read the previously downloaded data
     df_train = pd.read_csv(train_path)
     df_test = pd.read_csv(test_path)
     
-    # Combine all data into a single dataframe
     df_all = pd.concat([df_train, df_test], ignore_index=True)
     
-    # Drop any NaNs just in case
     df_all = df_all.dropna(subset=['text', 'label'])
     print(f"Total dataset size after combining and cleaning: {len(df_all)} rows")
     
-    # Split: 70% Train, 30% Temp (which will become 15% Val / 15% Test)
     print("Splitting data into 70/15/15...")
     train_df, temp_df = train_test_split(
         df_all, test_size=0.3, random_state=42, stratify=df_all['label']
     )
     
-    # Split the 30% temp into 15% Val and 15% Test
     val_df, test_df = train_test_split(
         temp_df, test_size=0.5, random_state=42, stratify=temp_df['label']
     )
     
-    # Save back to CSV
     train_df.to_csv(os.path.join('data', 'train.csv'), index=False)
     val_df.to_csv(os.path.join('data', 'validate.csv'), index=False)
     test_df.to_csv(os.path.join('data', 'test.csv'), index=False)
