@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- Project Logo hosted on GitHub assets -->
-<img src="https://github.com/user-attachments/assets/cf66a0bc-f89a-41f2-959c-7cc8a7f8e8b2" alt="Spam Classifier Logo" width="120" style="margin-bottom: 15px;"/>
+<img src="https://raw.githubusercontent.com/cibrgine/spam-email-classifier/main/img/logo.png" alt="Spam Classifier Logo" width="120" style="margin-bottom: 15px;"/>
 
 # 📧 Deep Learning & ML Spam Email Classifier
 
@@ -21,6 +21,13 @@
 ---
 
 </div>
+
+## 💡 Engineering Foreword
+As a Machine Learning Engineer, my core focus is architecting, training, and optimizing intelligent systems to solve complex data constraints. In modern software engineering, AI tools are powerful force-multipliers.
+
+To maximize workflow velocity, the frontend interface (app.py) and secondary documentation assets of this project were generated using advanced LLM code-generation pipelines under my direct architectural supervision. Treating AI as an automated execution layer allows a single engineer to deploy end-to-end full-stack intelligent applications rapidly without compromising software engineering fundamentals. I take full ownership of the system design, pipeline logic, and underlying local infrastructure.
+
+---
 
 ## 💡 Project Overview
 Electronic mail remains a primary channel for communication, but it is heavily plagued by malicious, advertising, and phishing spam emails. This repository contains a production-ready, hybrid natural language processing (NLP) framework designed to detect spam emails with near-perfect precision.
@@ -131,12 +138,12 @@ Both models were rigorously tested against a holdout test dataset containing **5
 
 ---
 
-## 🖥️ Application Screenshot
+## 🖥️ Application Screenshots
 
 <div align="center">
-  <!-- Interactive Web UI Interface Screenshot hosted on GitHub assets -->
-  <img src="https://github.com/user-attachments/assets/b834e592-d610-424a-9eb3-ebcc04d0ef92" alt="Gradio Application UI Screenshot" width="800" style="box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 10px; border: 1px solid #e5e7eb;"/>
-  <p><em>Figure 1: The Gradio web interface, classifying a suspicious Walmart Gift Card scam email with near-100% confidence.</em></p>
+  <img src="https://raw.githubusercontent.com/cibrgine/spam-email-classifier/main/img/screen1.png" alt="Gradio Application UI Screenshot 1" width="800" style="box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 10px; border: 1px solid #e5e7eb; margin-bottom: 20px;"/>
+  <img src="https://raw.githubusercontent.com/cibrgine/spam-email-classifier/main/img/screen2.png" alt="Gradio Application UI Screenshot 2" width="800" style="box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 10px; border: 1px solid #e5e7eb;"/>
+  <p><em>Figures 1 & 2: The Gradio web interface, showcasing classification results for different email samples.</em></p>
 </div>
 
 ---
