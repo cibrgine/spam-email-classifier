@@ -1,0 +1,27 @@
+# Virtual environment
+venv/
+.venv/
+env/
+ENV/
+
+# Python caching
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Training outputs & logs
+results/
+logs/
+tmp_trainer/
+
+# Model checkpoints/weights (safetensors is ~268MB, exceeding GitHub's 100MB limit)
+models/
+
+# Local data splits (regenerated via download_data.py & split_data.py)
+data/
+
+# IDE files and OS metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
